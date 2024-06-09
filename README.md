@@ -9,13 +9,18 @@ pip install fgts_pdf_dados --user
 
 ## Uso
 ```shell
-cd "Pasta com FGTSs"
+cd "Pasta com PDFs do FGTSs"
+ls
+EXTRATO_EMPRESA_1.pdf
+EXTRATO_EMPRESA_2.pdf
+EXTRATO_EMPRESA_3.pdf
+
 fgts-pdf-dados
 ```
 Ou converta os nomes das empresas para algo mais bonito:
 
 ```shell
-cd "Pasta com FGTSs"
+cd "Pasta com PDFs do FGTSs"
 fgts-pdf-dados \
     --nickname 'C I T SOFTWARE SA' 'CI&T' \
     --nickname 'DIGITAL HOUSE EDUCACAO LTDA' 'Digital House'
