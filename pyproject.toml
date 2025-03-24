@@ -1,7 +1,7 @@
 [project]
 name = "fgts_pdf_dados"
 version = '1.1'
-description = "Extrai dados de múltiplos extratos PDF da app do FGTS e grava tudo como uma série histórica num CSV pronto para usar com o Inverstorzilla."
+description = "Extrai dados de múltiplos extratos PDF da app do FGTS e grava tudo como uma série histórica num CSV pronto para usar com o Inverstorzilla"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.8"
@@ -28,6 +28,7 @@ classifiers=[
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Office/Business :: Financial :: Investment",
 ]
 
 
