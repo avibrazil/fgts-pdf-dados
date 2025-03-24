@@ -41,7 +41,7 @@ all:
             --nickname 'OUTRO NOME FEIO'               'Apelido Bonito'
 ```
 
-Aí, depois de gravar o extrato atualizado, só preciso rodar `make`.
+Aí, depois de gravar o extrato atualizado da app do FGTS, só preciso rodar `make`.
 
 ## Resultado
 O arquivo `FGTS.csv` vai conter uma série histórica com todos os dados de cada
