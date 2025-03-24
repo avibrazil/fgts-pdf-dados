@@ -9,25 +9,44 @@ pip install fgts_pdf_dados --user
 
 ## Uso
 ```shell
-cd "Pasta com PDFs do FGTSs"
-ls
+shell> cd "Pasta com PDFs do FGTSs"
+shell> ls
 EXTRATO_EMPRESA_1.pdf
 EXTRATO_EMPRESA_2.pdf
 EXTRATO_EMPRESA_3.pdf
 
-fgts-pdf-dados
+shell> fgts-pdf-dados
 ```
 Ou converta os nomes das empresas para algo mais bonito:
 
 ```shell
-cd "Pasta com PDFs do FGTSs"
-fgts-pdf-dados \
+shell> cd "Pasta com PDFs do FGTSs"
+shell> fgts-pdf-dados \
     --nickname 'C I T SOFTWARE SA' 'CI&T' \
     --nickname 'DIGITAL HOUSE EDUCACAO LTDA' 'Digital House'
 ```
 
+Todo mês, por volta do dia 21, eu entro na app do FGTS e gravo em PDF o extrato
+atualizado de todas as minhas contas ativas. A inativas só preciso fazer uma
+vez. Mantenho tudo junto numa pasta onde rodo o comando `fgts-pdf-dados`. Na
+verdade, tenho um `Makefile` com o seguinte conteúdo:
+
+```Makefile
+all:
+        # pip install --user fgts-pdf-dados
+        fgts-pdf-dados \
+            --nickname 'C I T SOFTWARE SA'             'CI&T' \
+            --nickname 'DIGITAL HOUSE EDUCACAO LTDA'   'Digital House' \
+            --nickname 'NOME FEIO CONFORME VEM NO PDF' 'Apelido Bonito' \
+            --nickname 'OUTRO NOME FEIO'               'Apelido Bonito'
+```
+
+Aí, depois de gravar o extrato atualizado, só preciso rodar `make`.
+
 ## Resultado
-O arquivo `FGTS.csv` vai conter:
+O arquivo `FGTS.csv` vai conter uma série histórica com todos os dados de cada
+empresa ou conta de FGTS e já separa o que é movimentação de entrada e saída
+(coluna movement) e o que é juros (coluna interest):
 | account                    | time                                |   movement |   interest |     total | desc                                    |
 |:---------------------------|:------------------------------------|-----------:|-----------:|----------:|:----------------------------------------|
 | FGTS CI&T (472349)         | 2019-07-05 12:00:00.898000-03:00    |     12.52  |            |           | 150-DEPOSITO JUNHO 2019                 |

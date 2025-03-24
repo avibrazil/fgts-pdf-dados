@@ -1,7 +1,7 @@
 [project]
 name = "fgts_pdf_dados"
-version = '1.0'
-description = "Extrai dados de PDFs do FGTS e grava tudo em arquivo CSV pronto para usar com o Inverstorzilla."
+version = '1.1'
+description = "Extrai dados de múltiplos extratos PDF da app do FGTS e grava tudo como uma série histórica num CSV pronto para usar com o Inverstorzilla."
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.8"
@@ -33,10 +33,10 @@ classifiers=[
 fgts-pdf-dados = "fgts_pdf_dados.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/avibrazil/xingu"
-Source = "https://github.com/avibrazil/xingu"
-Issues = "https://github.com/avibrazil/xingu/issues/new/choose"
-Pypi = "https://pypi.org/project/xingu"
+Homepage = "https://github.com/avibrazil/fgts-pdf-dados"
+Source = "https://github.com/avibrazil/fgts-pdf-dados"
+Issues = "https://github.com/avibrazil/fgts-pdf-dados/issues/new/choose"
+Pypi = "https://pypi.org/project/fgts-pdf-dados/"
 
 [tool.setuptools.package-dir]
 fgts_pdf_dados = "src"
