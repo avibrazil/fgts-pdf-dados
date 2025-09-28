@@ -22,14 +22,15 @@ Ou converta os nomes das empresas para algo mais bonito:
 ```shell
 shell> cd "Pasta com PDFs do FGTSs"
 shell> fgts-pdf-dados \
-    --nickname 'C I T SOFTWARE SA' 'CI&T' \
+    --nickname 'C I T SOFTWARE SA'           'CI&T' \
     --nickname 'DIGITAL HOUSE EDUCACAO LTDA' 'Digital House'
 ```
 
-Todo mês, por volta do dia 21, eu entro na app do FGTS e gravo em PDF o extrato
-atualizado de todas as minhas contas ativas. A inativas só preciso fazer uma
-vez. Mantenho tudo junto numa pasta onde rodo o comando `fgts-pdf-dados`. Na
-verdade, tenho um `Makefile` com o seguinte conteúdo:
+Todo mês, por volta do dia 21, eu entro na app do FGTS e salvo em PDF o extrato
+atualizado de todas as minhas contas ativas. As inativas (empresas que já saquei
+e zerei o FGTS) só preciso fazer uma vez. Mantenho tudo junto numa pasta onde
+rodo o comando `fgts-pdf-dados`. Na verdade, tenho um `Makefile` com o seguinte
+conteúdo:
 
 ```Makefile
 all:
@@ -46,7 +47,8 @@ Aí, depois de gravar o extrato atualizado da app do FGTS, só preciso rodar `ma
 ## Resultado
 O arquivo `FGTS.csv` vai conter uma série histórica com todos os dados de cada
 empresa ou conta de FGTS e já separa o que é movimentação de entrada e saída
-(coluna movement) e o que é juros (coluna interest):
+(coluna movement) e o que é juros (coluna interest). E tem também a coluna mais
+importante (total) com o saldo daquela conta, naquele instante do tempo:
 | account                    | time                                |   movement |   interest |     total | desc                                    |
 |:---------------------------|:------------------------------------|-----------:|-----------:|----------:|:----------------------------------------|
 | FGTS CI&T (472349)         | 2019-07-05 12:00:00.898000-03:00    |     12.52  |            |           | 150-DEPOSITO JUNHO 2019                 |
@@ -58,6 +60,12 @@ empresa ou conta de FGTS e já separa o que é movimentação de entrada e saíd
 | FGTS Digital House (13360) | 2021-09-21 12:00:00.895000001-03:00 |            |            |      1.74 |                                         |
 | FGTS Digital House (13360) | 2021-09-21 12:00:00.896000-03:00    |      -1.74 |            |           | SAQUE JAM - COD 01                      |
 | FGTS Digital House (13360) | 2021-09-21 12:00:00.896000001-03:00 |            |            |      0    |                                         |
+
+Ao nome da conta (manipulável com o parâmetro `--nickname`) será adicionado o
+número dela conforme encontrado no PDF, então não tem problema se você usar o
+`--nickname` para converter diversos nomes feios diferentes para um único nome
+bonito. Isso me foi últil pois uma empresa em que trabalhei por muitas décadas
+foi mudando o nome em que se declarava no FGTS.
 
 ## Sobre
 Feito por Avi Alkalay para prover dados pessoais ao meu painel de investimentos
