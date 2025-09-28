@@ -57,6 +57,7 @@ def extract(path=pathlib.Path('.'), nicknames: dict=dict()):
     # Linhas que representam juros.
     # Linhas diferentes destas são depósitos ou saques, não juros.
     interest="""
+        REGULARIZACAO CREDITO DE JAM
         CREDITO DE JAM
         150-JAM RECOLHIDO EMPRESA
         AC AUT JAM CALCULADO PELA CAIXA
